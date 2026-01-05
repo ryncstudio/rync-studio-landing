@@ -1,0 +1,162 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+  }
+}
+
+:root {
+  /* LIGHT MODE (Restored Clean Professional) */
+  --radius: 0.5rem;
+  
+  /* Background: Very Light Grey for contrast */
+  --background: #F8FAFC;
+  /* Text: Deep Navy */
+  --foreground: #0F172A;
+
+  /* Cards: Pure White */
+  --card: #FFFFFF;
+  --card-foreground: #021024;
+  
+  --popover: #FFFFFF;
+  --popover-foreground: #021024;
+  
+  /* Primary: Deep Navy (Brand) */
+  --primary: #052659;
+  --primary-foreground: #FFFFFF;
+  
+  /* Secondary: Ice Blue (Light Accent) */
+  --secondary: #E3F2FD;
+  --secondary-foreground: #052659;
+  
+  /* Muted: Greyish Blue */
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  
+  /* Accent: Hover states */
+  --accent: #F1F5F9;
+  --accent-foreground: #052659;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  
+  /* Border: Visible Slate */
+  --border: #CBD5E1;
+  --input: #CBD5E1;
+  --ring: #052659;
+}
+
+.dark {
+  /* DARK MODE (Original Rync Identity) */
+  --background: #021024;
+  --foreground: #FFFFFF;
+  
+  --card: rgba(5, 38, 89, 0.4);
+  --card-foreground: #FFFFFF;
+  
+  --popover: #052659;
+  --popover-foreground: #FFFFFF;
+  
+  --primary: #C1E8FF;
+  --primary-foreground: #021024;
+  
+  --secondary: #5483B3;
+  --secondary-foreground: #FFFFFF;
+  
+  --muted: #052659;
+  --muted-foreground: #7DA0CA;
+  
+  --accent: rgba(193, 232, 255, 0.1);
+  --accent-foreground: #C1E8FF;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  
+  --border: rgba(193, 232, 255, 0.15);
+  --input: rgba(193, 232, 255, 0.15);
+  --ring: #C1E8FF;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary selection:text-primary-foreground transition-colors duration-300;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight font-bold;
+  }
+  
+  /* 3D Utilities */
+  .perspective-2000 {
+    perspective: 2000px;
+  }
+  .rotate-x-20 {
+    transform: rotateX(20deg);
+  }
+  .rotate-x-5 {
+    transform: rotateX(5deg);
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Utilities that adapt to mode */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-gray-200 dark:bg-[#052659]/80 dark:border-white/10;
+  }
+  
+  .glass-card {
+    @apply bg-white border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 dark:bg-card dark:border-border dark:shadow-lg dark:hover:shadow-primary/10;
+  }
+
+  /* Performance optimizations for smooth animations */
+  @media (prefers-reduced-motion: no-preference) {
+    * {
+      /* Enable hardware acceleration for transforms and opacity */
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+  }
+}
