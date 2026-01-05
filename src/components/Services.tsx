@@ -38,7 +38,7 @@ export default function Services() {
   return (
     <section id="services" className="py-32 relative bg-secondary/10 dark:bg-background border-t border-border/50">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-8 text-center md:text-left">
           <div className="max-w-2xl">
             <FadeIn>
               <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Our Expertise</span>
@@ -49,7 +49,7 @@ export default function Services() {
             </FadeIn>
           </div>
           <FadeIn delay={0.2} direction="left">
-            <p className="text-muted-foreground text-lg max-w-md text-right md:text-left">
+            <p className="text-muted-foreground text-lg max-w-md">
               From concept to code, we provide end-to-end services to bring your vision to life.
             </p>
           </FadeIn>
