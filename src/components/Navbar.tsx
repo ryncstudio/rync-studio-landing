@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useTheme } from "@/contexts/ThemeContext";
 
@@ -17,6 +17,30 @@ const navItems = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme } = useTheme();
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Show navbar when at top of page
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      }
+      // Show when scrolling up, hide when scrolling down
+      else if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const scrollToTop = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -24,7 +48,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-1/2 -translate-x-1/2 z-[9999] w-full max-w-full px-4 pt-4">
+    <nav className={cn(
+      "fixed top-0 left-1/2 -translate-x-1/2 z-[9999] w-full max-w-full px-4 pt-4 transition-transform duration-300",
+      isVisible ? "translate-y-0" : "-translate-y-full"
+    )}>
       <div className="glass rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-primary/5 border border-slate-300 dark:border-white/10 backdrop-blur-xl bg-white/90 dark:bg-slate-900/90 max-w-5xl mx-auto">
         {/* Logo */}
         <a
