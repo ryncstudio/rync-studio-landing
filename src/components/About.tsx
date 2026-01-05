@@ -1,5 +1,6 @@
 import { FadeIn } from "@/components/FadeIn";
 import { CheckCircle2, Trophy, Users, Zap, Globe, Heart } from "lucide-react";
+import { projects } from "@/data/projects";
 
 export default function About() {
   return (
@@ -16,7 +17,7 @@ export default function About() {
 
         {/* Bento Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[minmax(200px,auto)]">
-          
+
           {/* 1. Large Mission Card (Span 2x2) */}
           <div className="md:col-span-2 md:row-span-2">
             <FadeIn className="h-full">
@@ -28,8 +29,8 @@ export default function About() {
                   </div>
                   <h3 className="text-3xl font-display font-bold text-foreground mb-4">Our Philosophy</h3>
                   <p className="text-muted-foreground text-lg leading-relaxed">
-                    Founded in 2025, Rync Studio started with a simple mission: to build digital products that feel alive. We aren't just developers or designers; we are digital architects obsessed with quality. 
-                    <br/><br/>
+                    Founded in 2025, Rync Studio started with a simple mission: to build digital products that feel alive. We aren't just developers or designers; we are digital architects obsessed with quality.
+                    <br /><br />
                     We believe in "Craft over Code" — every line we write and every pixel we push serves a greater purpose.
                   </p>
                 </div>
@@ -59,7 +60,7 @@ export default function About() {
                   <CheckCircle2 className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
                   <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Delivered</span>
                 </div>
-                <div className="text-5xl font-bold text-foreground font-display">1+</div>
+                <div className="text-5xl font-bold text-foreground font-display">{projects.length}+</div>
                 <p className="text-sm text-muted-foreground font-medium mt-1">Successful Projects</p>
               </div>
             </FadeIn>
@@ -81,7 +82,7 @@ export default function About() {
                 </div>
                 {/* Visual Representation of connection */}
                 <div className="flex -space-x-4 relative z-10">
-                   {[1, 2, 3, 4, 5].map((i) => (
+                  {[1, 2, 3, 4, 5].map((i) => (
                     <div key={i} className="w-12 h-12 rounded-full border-4 border-background bg-secondary flex items-center justify-center text-xs font-bold text-foreground">
                       C{i}
                     </div>
