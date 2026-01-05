@@ -7,8 +7,8 @@ interface SEOProps {
   type?: string;
 }
 
-export default function SEO({ 
-  title = "Rync Studio — Creative & Dev Studio",
+export default function SEO({
+  title = "Rync Studio",
   description = "Rync Studio is a modern creative studio building websites, apps, and digital systems with precision and purpose.",
   name = "Rync Studio",
   type = "website"
@@ -39,12 +39,12 @@ export default function SEO({
     };
 
     updateMeta("description", description);
-    
+
     // Facebook
     updateProperty("og:type", type);
     updateProperty("og:title", title);
     updateProperty("og:description", description);
-    
+
     // Twitter
     updateMeta("twitter:creator", name);
     updateMeta("twitter:title", title);
