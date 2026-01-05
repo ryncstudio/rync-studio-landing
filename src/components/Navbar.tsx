@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -15,6 +16,7 @@ const navItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
 
   const scrollToTop = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -25,14 +27,16 @@ export default function Navbar() {
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
       <div className="glass rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-primary/5 border border-slate-300 dark:border-white/10/50">
         {/* Logo */}
-        <a 
-          href="#home" 
+        <a
+          href="#home"
           onClick={scrollToTop}
           className="text-xl font-bold tracking-tighter flex items-center gap-2 text-foreground cursor-pointer group"
         >
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-primary-foreground font-black group-hover:scale-110 transition-transform">
-            R
-          </div>
+          <img
+            src={theme === 'dark' ? '/logo-light.png' : '/logo-dark.png'}
+            alt="Rync Studio Logo"
+            className="w-12 h-12 object-contain group-hover:scale-110 transition-transform"
+          />
           <span className="font-display hidden sm:inline">Rync Studio</span>
         </a>
 
@@ -56,7 +60,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden lg:flex items-center gap-3">
           <ThemeToggle />
-          <Button 
+          <Button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="rounded-full font-bold bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-all cursor-pointer"
           >
@@ -93,7 +97,7 @@ export default function Navbar() {
               {item.name}
             </a>
           ))}
-          <Button 
+          <Button
             onClick={() => {
               setIsOpen(false);
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
