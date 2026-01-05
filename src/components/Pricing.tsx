@@ -6,23 +6,29 @@ import { useState } from "react";
 const plans = [
   {
     name: "Starter",
-    price: "$2,900",
+    projectPrice: "$2,900",
+    retainerPrice: "$1,200",
     period: "project",
+    retainerPeriod: "month",
     description: "Essential tools for startups and MVPs.",
     features: ["Custom Design System", "5-Page Responsive Site", "CMS Integration", "Basic SEO Setup", "1 Month Support"],
   },
   {
     name: "Growth",
-    price: "$5,500",
+    projectPrice: "$5,500",
+    retainerPrice: "$2,500",
     period: "project",
+    retainerPeriod: "month",
     description: "Complete solution for scaling businesses.",
     features: ["Advanced UX/UI Design", "10+ Pages & Blog", "Custom Animations", "API Integrations", "Advanced SEO & Analytics", "3 Months Priority Support"],
     highlight: true,
   },
   {
     name: "Enterprise",
-    price: "Custom",
+    projectPrice: "Custom",
+    retainerPrice: "Custom",
     period: "tailored",
+    retainerPeriod: "tailored",
     description: "Tailored architecture for large organizations.",
     features: ["Full Product Design", "Complex Web Applications", "Dedicated Development Team", "24/7 SLA Support", "Security Audits", "Cloud Infrastructure"],
   },
@@ -45,17 +51,18 @@ export default function Pricing() {
               Invest in your <span className="text-muted-foreground">Growth.</span>
             </h2>
           </FadeIn>
-          
+
           <FadeIn delay={0.1}>
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <span className={`text-sm font-bold ${billing === "project" ? "text-foreground" : "text-muted-foreground"}`}>Project Based</span>
-              <button 
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8">
+              <span className={`text-xs sm:text-sm font-bold ${billing === "project" ? "text-foreground" : "text-muted-foreground"} transition-colors`}>Project Based</span>
+              <button
                 onClick={() => setBilling(billing === "project" ? "retainer" : "project")}
-                className="w-14 h-8 rounded-full bg-border p-1 relative transition-colors hover:bg-primary/20"
+                className="w-14 h-8 rounded-full bg-border p-1 relative transition-colors hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                aria-label="Toggle billing type"
               >
                 <div className={`w-6 h-6 rounded-full bg-primary shadow-sm transition-transform duration-300 ${billing === "retainer" ? "translate-x-6" : ""}`}></div>
               </button>
-              <span className={`text-sm font-bold ${billing === "retainer" ? "text-foreground" : "text-muted-foreground"}`}>Retainer</span>
+              <span className={`text-xs sm:text-sm font-bold ${billing === "retainer" ? "text-foreground" : "text-muted-foreground"} transition-colors`}>Retainer</span>
             </div>
           </FadeIn>
         </div>
@@ -64,23 +71,26 @@ export default function Pricing() {
           {plans.map((plan, index) => (
             <FadeIn key={index} delay={0.2 + (index * 0.1)} className="h-full">
               <div
-                className={`p-8 rounded-3xl border flex flex-col h-full relative transition-all duration-300 group ${
-                  plan.highlight
-                    ? "bg-card border-primary shadow-2xl shadow-primary/10 scale-105 z-10"
-                    : "bg-background border-border hover:border-primary/30 hover:shadow-lg"
-                }`}
+                className={`p-8 rounded-3xl border flex flex-col h-full relative transition-all duration-300 group ${plan.highlight
+                  ? "bg-card border-primary shadow-2xl shadow-primary/10 scale-105 z-10"
+                  : "bg-background border-border hover:border-primary/30 hover:shadow-lg"
+                  }`}
               >
                 {plan.highlight && (
                   <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1 rounded-bl-2xl rounded-tr-2xl text-xs font-bold flex items-center gap-1">
                     <Zap className="w-3 h-3 fill-current" /> Popular
                   </div>
                 )}
-                
+
                 <div className="mb-8">
                   <h3 className="text-xl font-bold text-foreground mb-2">{plan.name}</h3>
                   <div className="flex items-baseline gap-1 mb-4">
-                    <span className="text-4xl font-bold text-foreground font-display tracking-tight">{plan.price}</span>
-                    <span className="text-muted-foreground text-sm">/{plan.period}</span>
+                    <span className="text-4xl font-bold text-foreground font-display tracking-tight">
+                      {billing === "project" ? plan.projectPrice : plan.retainerPrice}
+                    </span>
+                    <span className="text-muted-foreground text-sm">
+                      /{billing === "project" ? plan.period : plan.retainerPeriod}
+                    </span>
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed">{plan.description}</p>
                 </div>
@@ -98,13 +108,12 @@ export default function Pricing() {
                   ))}
                 </ul>
 
-                <Button 
+                <Button
                   onClick={scrollToContact}
-                  className={`w-full h-12 rounded-xl font-bold text-base shadow-sm transition-all ${
-                    plan.highlight 
-                      ? "bg-primary text-primary-foreground hover:bg-primary/90" 
-                      : "bg-secondary text-foreground hover:bg-secondary/80 border border-transparent"
-                  }`}
+                  className={`w-full h-12 rounded-xl font-bold text-base shadow-sm transition-all ${plan.highlight
+                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                    : "bg-secondary text-foreground hover:bg-secondary/80 border border-transparent"
+                    }`}
                 >
                   Get Started
                 </Button>
