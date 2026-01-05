@@ -6,31 +6,54 @@ import { useState } from "react";
 const plans = [
   {
     name: "Starter",
-    projectPrice: "$2,900",
-    retainerPrice: "$1,200",
+    projectPrice: "$3,500",
+    retainerPrice: "$1,500",
     period: "project",
     retainerPeriod: "month",
-    description: "Essential tools for startups and MVPs.",
-    features: ["Custom Design System", "5-Page Responsive Site", "CMS Integration", "Basic SEO Setup", "1 Month Support"],
+    description: "Perfect for startups and small businesses looking to establish their digital presence.",
+    features: [
+      "Brand Identity Design",
+      "5-Page Responsive Website",
+      "Basic UI/UX Design",
+      "Social Media Visual Assets (5 posts)",
+      "1 Month Support & Revisions",
+      "SEO Setup"
+    ],
   },
   {
     name: "Growth",
-    projectPrice: "$5,500",
-    retainerPrice: "$2,500",
+    projectPrice: "$7,500",
+    retainerPrice: "$3,200",
     period: "project",
     retainerPeriod: "month",
-    description: "Complete solution for scaling businesses.",
-    features: ["Advanced UX/UI Design", "10+ Pages & Blog", "Custom Animations", "API Integrations", "Advanced SEO & Analytics", "3 Months Priority Support"],
+    description: "Ideal for growing businesses ready to scale with comprehensive digital solutions.",
+    features: [
+      "Complete Brand Identity System",
+      "10+ Page Website with CMS",
+      "Advanced UI/UX & Custom Animations",
+      "Social Media Design Package (20 posts)",
+      "2 Short-Form Videos/Reels",
+      "API Integrations & Analytics",
+      "3 Months Priority Support"
+    ],
     highlight: true,
   },
   {
     name: "Enterprise",
     projectPrice: "Custom",
-    retainerPrice: "Custom",
+    retainerPrice: "$5,000+",
     period: "tailored",
-    retainerPeriod: "tailored",
-    description: "Tailored architecture for large organizations.",
-    features: ["Full Product Design", "Complex Web Applications", "Dedicated Development Team", "24/7 SLA Support", "Security Audits", "Cloud Infrastructure"],
+    retainerPeriod: "month",
+    description: "Full-scale digital transformation for established organizations and ambitious projects.",
+    features: [
+      "Full Product Design & Development",
+      "Complex Web Applications",
+      "Dedicated Creative Team",
+      "Unlimited Social Media Assets",
+      "Video Production & Motion Graphics",
+      "Ongoing Creative Partnership",
+      "24/7 Support & Maintenance"
+    ],
   },
 ];
 
