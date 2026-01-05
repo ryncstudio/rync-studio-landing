@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronRight, Play } from "lucide-react";
-import heroBg from "@/assets/images/hero-bg.jpg"; 
+import heroBg from "@/assets/images/hero-bg.jpg";
 import { FadeIn } from "@/components/FadeIn";
 
 export default function Hero() {
@@ -21,16 +21,7 @@ export default function Hero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20">
-          <FadeIn delay={0.1}>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/30 border border-border/50 backdrop-blur-sm mb-8 hover:border-primary/30 transition-colors cursor-pointer group">
-              <span className="flex h-2 w-2 rounded-full bg-primary relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              </span>
-              <span className="text-sm font-medium text-foreground">v2.0 is live</span>
-              <ChevronRight className="w-4 h-4 text-slate-600 dark:text-slate-400 group-hover:text-foreground transition-colors" />
-            </div>
-          </FadeIn>
-          
+
           <FadeIn delay={0.2}>
             <h1 className="text-6xl md:text-8xl font-display font-bold tracking-tight text-foreground mb-8 leading-[0.95]">
               Engineering the <br className="hidden md:block" />
@@ -38,13 +29,13 @@ export default function Hero() {
               <br className="hidden md:block" /> of Digital Products.
             </h1>
           </FadeIn>
-          
+
           <FadeIn delay={0.3}>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
               We help ambitious brands build high-performance websites, apps, and digital systems that scale with their vision.
             </p>
           </FadeIn>
-          
+
           <FadeIn delay={0.4}>
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Button size="lg" onClick={scrollToWork} className="rounded-full h-14 px-8 text-base font-bold bg-foreground text-background hover:bg-foreground/90 shadow-xl shadow-primary/10">
