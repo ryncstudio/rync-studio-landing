@@ -24,8 +24,8 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-[9999] w-[95%] max-w-5xl">
-      <div className="glass rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-primary/5 border border-slate-300 dark:border-white/10 backdrop-blur-xl bg-white/90 dark:bg-slate-900/90">
+    <nav className="fixed top-0 left-1/2 -translate-x-1/2 z-[9999] w-full max-w-full px-4 pt-4">
+      <div className="glass rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-primary/5 border border-slate-300 dark:border-white/10 backdrop-blur-xl bg-white/90 dark:bg-slate-900/90 max-w-5xl mx-auto">
         {/* Logo */}
         <a
           href="#home"
