@@ -35,7 +35,7 @@ export default function Navbar() {
           <img
             src={theme === 'dark' ? '/logo-light.png' : '/logo-dark.png'}
             alt="Rync Studio Logo"
-            className="w-12 h-12 object-contain group-hover:scale-110 transition-transform"
+            className="w-14 h-14 object-contain group-hover:scale-110 transition-transform"
           />
           <span className="font-display hidden sm:inline">Rync Studio</span>
         </a>
