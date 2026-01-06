@@ -38,7 +38,7 @@ export default function Services() {
   return (
     <section id="services" className="py-32 relative bg-secondary/10 dark:bg-background border-t border-border/50">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 gap-8 text-center md:text-left">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-2xl">
             <FadeIn>
               <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Our Expertise</span>
@@ -49,7 +49,7 @@ export default function Services() {
             </FadeIn>
           </div>
           <FadeIn delay={0.2} direction="left">
-            <p className="text-muted-foreground text-lg max-w-md">
+            <p className="text-muted-foreground text-lg max-w-md text-right md:text-left">
               From concept to code, we provide end-to-end services to bring your vision to life.
             </p>
           </FadeIn>
@@ -57,18 +57,18 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <FadeIn key={index} delay={0.05 * index} className="h-full">
-              <div className="group bg-card border border-border p-8 rounded-2xl h-full flex flex-col justify-between hover:border-primary/50 hover:shadow-lg transition-all duration-200 relative overflow-hidden will-change-transform">
+            <FadeIn key={index} delay={0.1 + (index * 0.1)} className="h-full">
+              <div className="group bg-card border border-border p-8 rounded-2xl h-full flex flex-col justify-between hover:border-primary/50 hover:shadow-lg transition-all duration-300 relative overflow-hidden">
 
                 {/* Hover Gradient Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-xl bg-secondary/50 dark:bg-secondary/20 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform duration-200 border border-primary/10 will-change-transform">
+                  <div className="w-14 h-14 rounded-xl bg-secondary/50 dark:bg-secondary/20 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform duration-300 border border-primary/10">
                     <service.icon className="w-7 h-7" />
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-200">
+                  <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
 
@@ -77,8 +77,8 @@ export default function Services() {
                   </p>
                 </div>
 
-                <div className="relative z-10 mt-8 pt-8 border-t border-border/50 flex items-center text-sm font-bold text-foreground group-hover:text-primary transition-colors duration-200">
-                  Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200 will-change-transform" />
+                <div className="relative z-10 mt-8 pt-8 border-t border-border/50 flex items-center text-sm font-bold text-foreground group-hover:text-primary transition-colors">
+                  Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </FadeIn>

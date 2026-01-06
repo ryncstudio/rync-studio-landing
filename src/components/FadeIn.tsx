@@ -18,7 +18,7 @@ export function FadeIn({
   fullWidth = false
 }: FadeInProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   const directionOffset = {
     up: { y: 40, x: 0 },
@@ -45,7 +45,7 @@ export function FadeIn({
       initial={initial}
       animate={isInView ? visible : initial}
       transition={{
-        duration: 0.5,
+        duration: 0.7,
         ease: [0.21, 0.47, 0.32, 0.98],
         delay: delay
       }}
@@ -58,7 +58,7 @@ export function FadeIn({
 
 export function StaggerContainer({ children, className, delay = 0 }: { children: React.ReactNode, className?: string, delay?: number }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px" });
 
   return (
     <motion.div
