@@ -1,6 +1,7 @@
 import abstractImg from "@/assets/images/abstract-1.jpg";
 import rodMartinImg from "@/assets/images/rod-martin.png";
 import owenAssociatesImg from "@/assets/images/owen-associates.png";
+import creatorsValueImg from "@/assets/images/creators-value.png";
 
 export const projects = [
     {
@@ -16,10 +17,10 @@ export const projects = [
         image: rodMartinImg,
     },
     {
-        category: "E-Commerce",
-        title: "Vogue Fashion",
-        description: "Luxury headless storefront.",
-        image: abstractImg,
+        category: "Content Platform",
+        title: "Creators Value",
+        description: "Empowering creators, visionaries, and storytellers to grow with value.",
+        image: creatorsValueImg,
     },
     {
         category: "Design System",
