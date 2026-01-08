@@ -2,6 +2,8 @@ import abstractImg from "@/assets/images/abstract-1.jpg";
 import rodMartinImg from "@/assets/images/rod-martin.png";
 import owenAssociatesImg from "@/assets/images/owen-associates.png";
 import creatorsValueImg from "@/assets/images/creators-value.png";
+import porbEduAksyonImg from "@/assets/images/porbeduaksyon.png";
+import pawVitaImg from "@/assets/images/pawvita.png";
 
 export const projects = [
     {
@@ -23,15 +25,15 @@ export const projects = [
         image: creatorsValueImg,
     },
     {
-        category: "Design System",
-        title: "Orbit UI",
-        description: "Enterprise component library.",
-        image: abstractImg,
+        category: "Education Platform",
+        title: "PorbEduAksyon",
+        description: "Online learning platform empowering marginalized citizens with skills and opportunities.",
+        image: porbEduAksyonImg,
     },
     {
-        category: "SaaS",
-        title: "Metrics.io",
-        description: "Real-time analytics dashboard.",
-        image: abstractImg,
+        category: "Pet Care Platform",
+        title: "PawVita",
+        description: "Life & care for every pet - Premium pet essentials and trusted veterinary care.",
+        image: pawVitaImg,
     },
 ];
