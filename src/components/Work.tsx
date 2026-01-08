@@ -52,13 +52,13 @@ export default function Work() {
 
                 {/* Content Below */}
                 <div className="mt-6">
-                  <div className="flex justify-between items-baseline mb-2">
-                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">{project.title}</h3>
-                    <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground border border-border px-2 py-1 rounded-full">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 sm:gap-0 mb-2">
+                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors break-words">{project.title}</h3>
+                    <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground border border-border px-2 py-1 rounded-full self-start sm:self-auto whitespace-nowrap">
                       {project.category}
                     </span>
                   </div>
-                  <p className="text-muted-foreground text-base leading-relaxed line-clamp-2">{project.description}</p>
+                  <p className="text-muted-foreground text-base leading-relaxed line-clamp-2 break-words">{project.description}</p>
                 </div>
               </div>
             </FadeIn>
