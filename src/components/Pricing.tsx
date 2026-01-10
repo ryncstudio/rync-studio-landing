@@ -6,53 +6,64 @@ import { useState } from "react";
 const plans = [
   {
     name: "Starter",
-    projectPrice: "$3,500",
-    retainerPrice: "$1,500",
+    projectPrice: "$1,950",
+    projectPricePHP: "₱110,000",
+    retainerPrice: "$800",
+    retainerPricePHP: "₱45,000",
     period: "project",
     retainerPeriod: "month",
-    description: "Perfect for startups and small businesses looking to establish their digital presence.",
+    description: "Launch your professional presence fast. Perfect for startups and small businesses.",
     features: [
-      "Brand Identity Design",
       "5-Page Responsive Website",
-      "Basic UI/UX Design",
-      "Social Media Visual Assets (5 posts)",
-      "1 Month Support & Revisions",
-      "SEO Setup"
+      "Mobile-Optimized Design",
+      "Basic SEO Setup",
+      "Contact Form Integration",
+      "1 Round of Revisions",
+      "2-Week Delivery",
+      "30-Day Post-Launch Support"
     ],
+    paymentPlans: true,
   },
   {
     name: "Growth",
-    projectPrice: "$7,500",
-    retainerPrice: "$3,200",
+    projectPrice: "$4,500",
+    projectPricePHP: "₱255,000",
+    retainerPrice: "$1,500",
+    retainerPricePHP: "₱85,000",
     period: "project",
     retainerPeriod: "month",
-    description: "Ideal for growing businesses ready to scale with comprehensive digital solutions.",
+    description: "Scale with systems that convert. Ideal for growing businesses ready to scale.",
     features: [
+      "10-15 Page Website with CMS",
+      "Advanced UI/UX + Custom Animations",
       "Complete Brand Identity System",
-      "10+ Page Website with CMS",
-      "Advanced UI/UX & Custom Animations",
-      "Social Media Design Package (20 posts)",
+      "SEO Optimization + Google Analytics",
       "2 Short-Form Videos/Reels",
-      "API Integrations & Analytics",
+      "Social Media Design Package (20 posts)",
+      "API Integrations",
       "3 Months Priority Support"
     ],
     highlight: true,
+    paymentPlans: true,
   },
   {
     name: "Enterprise",
     projectPrice: "Custom",
-    retainerPrice: "$5,000+",
+    projectPricePHP: "Custom",
+    retainerPrice: "$3,000+",
+    retainerPricePHP: "₱170,000+",
     period: "tailored",
     retainerPeriod: "month",
-    description: "Full-scale digital transformation for established organizations and ambitious projects.",
+    description: "Enterprise-grade digital transformation for established organizations.",
     features: [
-      "Full Product Design & Development",
+      "Full Product Design + Development",
       "Complex Web Applications",
       "Dedicated Creative Team",
       "Unlimited Social Media Assets",
-      "Video Production & Motion Graphics",
+      "Video Production + Motion Graphics",
+      "Performance SLAs (LCP <2.5s, 99.9% uptime)",
       "Ongoing Creative Partnership",
-      "24/7 Support & Maintenance"
+      "24/7 Support + Maintenance Option"
     ],
   },
 ];
@@ -107,13 +118,25 @@ export default function Pricing() {
 
                 <div className="mb-8">
                   <h3 className="text-xl font-bold text-foreground mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline gap-1 mb-4">
-                    <span className="text-4xl font-bold text-foreground font-display tracking-tight">
-                      {billing === "project" ? plan.projectPrice : plan.retainerPrice}
-                    </span>
-                    <span className="text-muted-foreground text-sm">
-                      /{billing === "project" ? plan.period : plan.retainerPeriod}
-                    </span>
+                  <div className="mb-4">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl font-bold text-foreground font-display tracking-tight">
+                        {billing === "project" ? plan.projectPrice : plan.retainerPrice}
+                      </span>
+                      <span className="text-muted-foreground text-sm">
+                        /{billing === "project" ? plan.period : plan.retainerPeriod}
+                      </span>
+                    </div>
+                    {plan.projectPrice !== "Custom" && (
+                      <div className="text-sm text-muted-foreground mt-1">
+                        {billing === "project" ? plan.projectPricePHP : plan.retainerPricePHP}
+                      </div>
+                    )}
+                    {plan.paymentPlans && (
+                      <div className="text-xs text-primary font-bold mt-2">
+                        💳 Payment plans available
+                      </div>
+                    )}
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed">{plan.description}</p>
                 </div>
