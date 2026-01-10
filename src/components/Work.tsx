@@ -38,8 +38,11 @@ export default function Work() {
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10"></div>
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} - ${project.description}`}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    loading="lazy"
+                    width="800"
+                    height="500"
                   />
 
                   {/* Overlay Button */}

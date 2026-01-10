@@ -4,17 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- Primary Meta Tags -->
   <title>Rync Studio | Digital Product Design & Development Agency in Cebu</title>
   <meta name="description"
     content="Rync Studio builds high-performance websites, apps, and digital systems for ambitious brands. Expert UI/UX design, development, and branding in Cebu City, Philippines." />
-  <meta name="keywords" content="web design cebu, app development philippines, digital agency cebu, ui ux design, branding agency, web development" />
+  <meta name="keywords"
+    content="web design cebu, app development philippines, digital agency cebu, ui ux design, branding agency, web development" />
   <meta name="author" content="Rync Studio" />
-  
+
   <!-- Canonical URL -->
   <link rel="canonical" href="https://ryncstudio.vercel.app/" />
-  
+
   <!-- Robots -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
@@ -42,12 +43,12 @@
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="theme-color" content="#052659" />
-  
+
   <!-- Preconnect for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://api.web3forms.com">
-  
+
   <!-- Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
@@ -57,6 +58,94 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
+
+  <!-- Structured Data (JSON-LD) for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Rync Studio",
+    "url": "https://ryncstudio.vercel.app",
+    "logo": "https://ryncstudio.vercel.app/logo-light.png",
+    "description": "Digital product design and development agency specializing in high-performance websites, apps, and digital systems.",
+    "email": "ryncstudio@gmail.com",
+    "telephone": "+63-905-300-9722",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Veramont Residences Mabolo",
+      "addressLocality": "Cebu City",
+      "addressRegion": "Cebu",
+      "addressCountry": "PH"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+63-905-300-9722",
+      "contactType": "Customer Service",
+      "email": "ryncstudio@gmail.com",
+      "availableLanguage": ["English", "Filipino"]
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Rync Studio",
+    "url": "https://ryncstudio.vercel.app"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Digital Product Design & Development",
+    "provider": {
+      "@type": "Organization",
+      "name": "Rync Studio"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Philippines"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Design & Development Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Starter Package",
+            "description": "Perfect for startups and small businesses looking to establish their digital presence."
+          },
+          "price": "3500",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Growth Package",
+            "description": "Ideal for growing businesses ready to scale with comprehensive digital solutions."
+          },
+          "price": "7500",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Enterprise Package",
+            "description": "Full-scale digital transformation for established organizations and ambitious projects."
+          },
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  }
+  </script>
 </body>
 
 </html>
