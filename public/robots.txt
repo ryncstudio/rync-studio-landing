@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ryncstudio.com/sitemap.xml
+Sitemap: https://ryncstudio.vercel.app/sitemap.xml

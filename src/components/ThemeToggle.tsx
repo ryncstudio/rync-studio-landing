@@ -11,6 +11,8 @@ export function ThemeToggle() {
       size="icon"
       onClick={toggleTheme}
       className="rounded-full w-10 h-10 hover:bg-primary/10 transition-colors"
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+      aria-pressed={theme === 'dark'}
       title="Toggle Theme"
     >
       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 text-orange-500" />

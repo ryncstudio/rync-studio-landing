@@ -74,26 +74,26 @@ export default function Contact() {
 
           <div className="space-y-8">
             <FadeIn delay={0.2}>
-              <div className="flex items-start gap-6 group">
+              <a href="mailto:ryncstudio@gmail.com" className="flex items-start gap-6 group cursor-pointer">
                 <div className="w-12 h-12 rounded-full bg-white dark:bg-[#202020] flex items-center justify-center border border-border group-hover:border-primary transition-colors">
                   <Mail className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
                 </div>
                 <div>
                   <h4 className="text-foreground font-bold text-lg">Email Us</h4>
-                  <p className="text-muted-foreground">ryncstudio@gmail.com</p>
+                  <p className="text-muted-foreground hover:text-primary transition-colors">ryncstudio@gmail.com</p>
                 </div>
-              </div>
+              </a>
             </FadeIn>
             <FadeIn delay={0.3}>
-              <div className="flex items-start gap-6 group">
+              <a href="tel:+639053009722" className="flex items-start gap-6 group cursor-pointer">
                 <div className="w-12 h-12 rounded-full bg-white dark:bg-[#202020] flex items-center justify-center border border-border group-hover:border-primary transition-colors">
                   <Phone className="w-5 h-5 text-foreground group-hover:text-primary transition-colors" />
                 </div>
                 <div>
                   <h4 className="text-foreground font-bold text-lg">Call Us</h4>
-                  <p className="text-muted-foreground">09053009722</p>
+                  <p className="text-muted-foreground hover:text-primary transition-colors">09053009722</p>
                 </div>
-              </div>
+              </a>
             </FadeIn>
             <FadeIn delay={0.4}>
               <div className="flex items-start gap-6 group">

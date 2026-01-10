@@ -52,11 +52,11 @@ export default function Hero() {
               <div className="grid grid-cols-3 divide-x divide-border/50 gap-2 md:gap-8 opacity-80 max-w-3xl mx-auto">
                 <div className="text-center px-2">
                   <p className="text-2xl md:text-3xl font-display font-bold text-foreground">6+</p>
-                  <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Years Exp.</p>
+                  <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Years Combined Exp.</p>
                 </div>
                 <div className="text-center px-2">
-                  <p className="text-2xl md:text-3xl font-display font-bold text-foreground">1+</p>
-                  <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Projects</p>
+                  <p className="text-2xl md:text-3xl font-display font-bold text-foreground">5+</p>
+                  <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Successful Projects</p>
                 </div>
                 <div className="text-center px-2">
                   <p className="text-2xl md:text-3xl font-display font-bold text-foreground">100%</p>
