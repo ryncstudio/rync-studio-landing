@@ -14,7 +14,7 @@ import SEO from "@/components/SEO";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
+    <div id="main-content" className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-primary-foreground">
       <SEO />
       <Navbar />
       <Hero />

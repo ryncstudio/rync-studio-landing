@@ -26,6 +26,14 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[9999] w-full px-4 pt-4">
+      {/* Skip to content link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[10000] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:font-bold"
+      >
+        Skip to main content
+      </a>
+
       <div className="glass rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-primary/5 border border-slate-300 dark:border-white/10 backdrop-blur-xl bg-white/90 dark:bg-slate-900/90 max-w-5xl mx-auto">
         {/* Logo */}
         <a
