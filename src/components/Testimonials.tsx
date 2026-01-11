@@ -27,20 +27,6 @@ export default function Testimonials() {
                 <div className="text-2xl font-bold text-foreground/40">Creators Value</div>
               </div>
             </div>
-            <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">✓</span>
-                <span>5+ Successful Projects</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">✓</span>
-                <span>100% Client Satisfaction</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">✓</span>
-                <span>Based in Cebu City</span>
-              </div>
-            </div>
           </div>
         </FadeIn>
       </div>

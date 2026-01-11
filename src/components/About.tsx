@@ -1,99 +1,155 @@
 import { FadeIn } from "@/components/FadeIn";
-import { CheckCircle2, Trophy, Users, Zap, Globe, Heart } from "lucide-react";
-import { projects } from "@/data/projects";
+import { Button } from "@/components/ui/button";
+import { Rocket, Zap, Target } from "lucide-react";
 
 export default function About() {
   return (
     <section id="about" className="py-32 relative overflow-hidden bg-background">
       <div className="container mx-auto px-6">
-        <div className="mb-20 max-w-2xl">
+        {/* Header */}
+        <div className="mb-16 max-w-4xl mx-auto text-center">
           <FadeIn>
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">About Us</span>
-            <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 text-foreground leading-[1.1]">
-              We bridge the gap between <span className="text-primary">imagination</span> and reality.
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">About Rync Studio</span>
+            <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 text-foreground leading-tight">
+              We build digital experiences that <span className="text-primary">drive real results</span>
             </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              A Cebu-based digital studio specializing in fast, performance-driven websites and digital solutions for growing businesses.
+            </p>
           </FadeIn>
         </div>
 
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[minmax(200px,auto)]">
+        {/* Main Content */}
+        <div className="max-w-4xl mx-auto space-y-12">
 
-          {/* 1. Large Mission Card (Span 2x2) */}
-          <div className="md:col-span-2 md:row-span-2">
-            <FadeIn className="h-full">
-              <div className="bg-card border border-border p-10 rounded-2xl h-full flex flex-col justify-between hover:border-primary/30 transition-colors shadow-sm relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-                <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-full bg-secondary flex items-center justify-center text-primary mb-8">
-                    <Heart className="w-7 h-7" />
+          {/* Who We Are */}
+          <FadeIn delay={0.2}>
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold text-foreground">Who We Are</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Rync Studio is a digital design and development studio founded in 2025, built on 6+ years of combined experience. We're based in Cebu, Philippines, and we work with businesses locally and internationally who need websites and digital systems that actually perform.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We're not a large agency with layers of bureaucracy. We're a focused team that ships fast, measures everything, and delivers clarity. Whether you're launching your first website or scaling an existing platform, we build solutions that grow with your business.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* What We Do */}
+          <FadeIn delay={0.3}>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-foreground">What We Do</h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Rocket className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-3xl font-display font-bold text-foreground mb-4">Our Philosophy</h3>
-                  <p className="text-muted-foreground text-lg leading-relaxed">
-                    Founded in 2025, Rync Studio started with a simple mission: to build digital products that feel alive. We aren't just developers or designers; we are digital architects obsessed with quality.
-                    <br /><br />
-                    We believe in "Craft over Code" — every line we write and every pixel we push serves a greater purpose.
+                  <h4 className="font-bold text-foreground">Fast Launches</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    From 2-week starter sites to custom builds, we ship production-ready websites that look professional and load fast.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Zap className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-bold text-foreground">Performance-Driven</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Every site we build meets Core Web Vitals standards. Fast page loads, smooth interactions, and mobile-first design.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Target className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-bold text-foreground">Results-Focused</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Clear messaging, conversion-ready pages, and analytics you can act on. Every design decision drives business outcomes.
                   </p>
                 </div>
               </div>
-            </FadeIn>
-          </div>
+            </div>
+          </FadeIn>
 
-          {/* 2. Stat Card: Years (Span 1x1) */}
-          <div className="md:col-span-1">
-            <FadeIn delay={0.1} className="h-full">
-              <div className="bg-card border border-border p-8 rounded-2xl h-full flex flex-col justify-center hover:border-primary/30 transition-colors shadow-sm group">
-                <div className="flex justify-between items-start mb-4">
-                  <Trophy className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
-                  <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Since 2025</span>
-                </div>
-                <div className="text-5xl font-bold text-foreground font-display">6+</div>
-                <p className="text-sm text-muted-foreground font-medium mt-1">Years Experience</p>
-              </div>
-            </FadeIn>
-          </div>
+          {/* Our Approach */}
+          <FadeIn delay={0.4}>
+            <div className="bg-secondary/10 border border-border rounded-2xl p-8 space-y-4">
+              <h3 className="text-2xl font-bold text-foreground">Our Approach</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We believe in <strong className="text-foreground">Craft over Code</strong>. Every pixel and every line of code serves a business outcome—whether that's more leads, faster launches, or systems that scale without breaking.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                We work transparently with clear timelines, fixed pricing, and regular updates. No hidden fees, no scope creep, no surprises. You'll know exactly what you're getting and when you'll get it.
+              </p>
+            </div>
+          </FadeIn>
 
-          {/* 3. Stat Card: Projects (Span 1x1) */}
-          <div className="md:col-span-1">
-            <FadeIn delay={0.2} className="h-full">
-              <div className="bg-card border border-border p-8 rounded-2xl h-full flex flex-col justify-center hover:border-primary/30 transition-colors shadow-sm group">
-                <div className="flex justify-between items-start mb-4">
-                  <CheckCircle2 className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
-                  <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Delivered</span>
-                </div>
-                <div className="text-5xl font-bold text-foreground font-display">{projects.length}+</div>
-                <p className="text-sm text-muted-foreground font-medium mt-1">Successful Projects</p>
-              </div>
-            </FadeIn>
-          </div>
-
-          {/* 4. Global/Visual Card (Span 2x1) */}
-          <div className="md:col-span-2">
-            <FadeIn delay={0.3} className="h-full">
-              <div className="bg-primary/5 border border-border p-8 rounded-2xl h-full flex flex-col md:flex-row items-center justify-between gap-8 hover:border-primary/30 transition-colors shadow-sm relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#333_1px,transparent_1px)] [background-size:16px_16px] opacity-20"></div>
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Globe className="w-6 h-6 text-primary" />
-                    <h3 className="text-xl font-bold text-foreground">Global Reach</h3>
+          {/* Why Choose Rync */}
+          <FadeIn delay={0.5}>
+            <div className="space-y-4">
+              <h3 className="text-2xl font-bold text-foreground">Why Choose Rync Studio</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex gap-3 items-start">
+                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
                   </div>
-                  <p className="text-muted-foreground">
-                    Serving clients across 15+ countries, from startups to Fortune 500s.
-                  </p>
-                </div>
-                {/* Visual Representation of connection */}
-                <div className="flex -space-x-4 relative z-10">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <div key={i} className="w-12 h-12 rounded-full border-4 border-background bg-secondary flex items-center justify-center text-xs font-bold text-foreground">
-                      C{i}
-                    </div>
-                  ))}
-                  <div className="w-12 h-12 rounded-full border-4 border-background bg-primary text-white flex items-center justify-center text-xs font-bold">
-                    +100
+                  <div>
+                    <p className="font-semibold text-foreground">Speed & Efficiency</p>
+                    <p className="text-sm text-muted-foreground">Ship in weeks, not months. We move fast without cutting corners.</p>
                   </div>
                 </div>
+
+                <div className="flex gap-3 items-start">
+                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">Performance Standards</p>
+                    <p className="text-sm text-muted-foreground">Every site meets Core Web Vitals: LCP &lt;2.5s, CLS &lt;0.1.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3 items-start">
+                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">Clear Communication</p>
+                    <p className="text-sm text-muted-foreground">Regular updates, transparent pricing, no jargon. You'll always know where we stand.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3 items-start">
+                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground">Scalable Solutions</p>
+                    <p className="text-sm text-muted-foreground">Built to grow with you. From starter sites to custom platforms.</p>
+                  </div>
+                </div>
               </div>
-            </FadeIn>
-          </div>
+            </div>
+          </FadeIn>
+
+          {/* CTA */}
+          <FadeIn delay={0.6}>
+            <div className="text-center pt-8">
+              <Button
+                size="lg"
+                className="rounded-xl font-bold"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Start Your Project
+              </Button>
+              <p className="text-sm text-muted-foreground mt-4">
+                Ready to build something great? Let's talk about your project.
+              </p>
+            </div>
+          </FadeIn>
 
         </div>
       </div>
