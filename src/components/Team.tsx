@@ -1,6 +1,7 @@
 import ralph from "@/assets/images/ralph.png";
 import cindy from "@/assets/images/cindy.png";
 import kathleen from "@/assets/images/kathleen.png";
+import ramsleigh from "@/assets/images/ramsleigh.jpg";
 import { FadeIn } from "@/components/FadeIn";
 import { Linkedin, Twitter, Instagram, ArrowUpRight } from "lucide-react";
 
@@ -26,6 +27,13 @@ const team = [
     image: kathleen,
     socials: { linkedin: "#", twitter: "#", instagram: "#" }
   },
+  {
+    name: "Ramsleigh Espera",
+    role: "Full Stack Developer",
+    bio: "Building scalable solutions with modern web technologies.",
+    image: ramsleigh,
+    socials: { linkedin: "#", twitter: "#", instagram: "#" }
+  },
 ];
 
 export default function Team() {
@@ -44,7 +52,7 @@ export default function Team() {
       </div>
 
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {team.map((member, index) => (
             <FadeIn key={index} delay={0.2 + (index * 0.1)} className="h-full">
               <div className="group relative h-[500px] rounded-[32px] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500">
@@ -54,10 +62,10 @@ export default function Team() {
                   alt={member.name}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                
+
                 {/* Dark Gradient Overlay for text contrast */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60"></div>
-                
+
                 {/* Floating Glass Card - Dark Style matching reference */}
                 <div className="absolute bottom-4 left-4 right-4 bg-black/40 backdrop-blur-xl border border-white/10 p-6 rounded-3xl transition-all duration-300 group-hover:bg-black/50">
                   <div className="flex justify-between items-start mb-3">
@@ -70,7 +78,7 @@ export default function Team() {
                       <ArrowUpRight className="w-4 h-4" />
                     </div>
                   </div>
-                  
+
                   <p className="text-gray-300 text-sm mb-6 line-clamp-2 leading-relaxed">
                     {member.bio}
                   </p>
