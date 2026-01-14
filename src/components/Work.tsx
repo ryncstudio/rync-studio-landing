@@ -85,7 +85,7 @@ export default function Work() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
           {filteredProjects.map((project, index) => (
             <FadeIn key={index} delay={0.2 + (index * 0.1)}>
-              <div className="group relative block cursor-pointer">
+              <div className="group relative block">
                 {/* Disclaimer for Concept Projects */}
                 {project.disclaimer && (
                   <div className="mb-4 p-3 bg-amber-500/10 border border-amber-500/30 rounded-xl flex items-start gap-2">
@@ -96,59 +96,63 @@ export default function Work() {
                   </div>
                 )}
 
-                {/* Image Container */}
-                <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm dark:shadow-none transition-all duration-500 hover:shadow-lg aspect-[16/10]">
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10"></div>
-                  <img
-                    src={project.image}
-                    alt={`${project.title} - ${project.description}`}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    loading="lazy"
-                    width="800"
-                    height="500"
-                  />
+                <a
+                  href={project.url || '#'}
+                  target={project.url ? '_blank' : undefined}
+                  rel={project.url ? 'noopener noreferrer' : undefined}
+                  className="block cursor-pointer"
+                >
+                  {/* Image Container */}
+                  <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm dark:shadow-none transition-all duration-500 hover:shadow-lg aspect-[16/10]">
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 z-10"></div>
+                    <img
+                      src={project.image}
+                      alt={`${project.title} - ${project.description}`}
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      loading="lazy"
+                      width="800"
+                      height="500"
+                    />
 
-                  {/* Overlay Button */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                    <div className="w-16 h-16 bg-white/90 backdrop-blur-sm text-black rounded-full flex items-center justify-center shadow-2xl scale-75 group-hover:scale-100 transition-transform duration-300">
-                      <ArrowUpRight className="w-6 h-6" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content Below */}
-                <div className="mt-6">
-                  {/* Title and Badge */}
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 sm:gap-0 mb-2">
-                    <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors break-words">
-                      {project.title}
-                    </h3>
-                    <div className="flex gap-2 flex-wrap">
-                      <span className={cn(
-                        "text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border self-start sm:self-auto whitespace-nowrap",
-                        getBadgeColor(project.type)
-                      )}>
-                        {getBadgeLabel(project.type)}
-                      </span>
-                      <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground border border-border px-3 py-1 rounded-full self-start sm:self-auto whitespace-nowrap">
-                        {project.sector}
-                      </span>
+                    {/* Overlay Button */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                      <div className="w-16 h-16 bg-white/90 backdrop-blur-sm text-black rounded-full flex items-center justify-center shadow-2xl scale-75 group-hover:scale-100 transition-transform duration-300">
+                        <ArrowUpRight className="w-6 h-6" />
+                      </div>
                     </div>
                   </div>
 
-                  {/* Description */}
-                  <p className="text-muted-foreground text-base leading-relaxed mb-4 break-words">
-                    {project.description}
-                  </p>
+                  {/* Content Below */}
+                  <div className="mt-6">
+                    {/* Title and Badge */}
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 sm:gap-0 mb-2">
+                      <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors break-words">
+                        {project.title}
+                      </h3>
+                      <div className="flex gap-2 flex-wrap">
+                        <span className={cn(
+                          "text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border self-start sm:self-auto whitespace-nowrap",
+                          getBadgeColor(project.type)
+                        )}>
+                          {getBadgeLabel(project.type)}
+                        </span>
+                        <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground border border-border px-3 py-1 rounded-full self-start sm:self-auto whitespace-nowrap">
+                          {project.sector}
+                        </span>
+                      </div>
+                    </div>
 
-                  {/* CTA */}
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 text-primary font-semibold hover:underline text-sm"
-                  >
-                    View process →
-                  </a>
-                </div>
+                    {/* Description */}
+                    <p className="text-muted-foreground text-base leading-relaxed mb-4 break-words">
+                      {project.description}
+                    </p>
+
+                    {/* CTA */}
+                    <span className="inline-flex items-center gap-2 text-primary font-semibold hover:underline text-sm">
+                      {project.url ? 'Visit website' : 'View process'} →
+                    </span>
+                  </div>
+                </a>
               </div>
             </FadeIn>
           ))}

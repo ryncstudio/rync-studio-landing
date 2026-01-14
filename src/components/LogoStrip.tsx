@@ -3,10 +3,13 @@ import { cn } from "@/lib/utils";
 import porbEduAksyonLogo from "@/assets/logos/porbeduaksyon-logo.png";
 import owenAssociatesLogo from "@/assets/logos/owen-associates-logo.png";
 import rodMartinLogo from "@/assets/logos/rod-martin-logo.png";
+import creatorsValueLogo from "@/assets/logos/creators-value-logo.png";
+import creatorsValueLogoDark from "@/assets/logos/creators-value-logo-dark.png";
 
 interface Logo {
     name: string;
     image: string;
+    imageDark?: string;
     alt: string;
     href: string;
     ariaLabel: string;
@@ -17,15 +20,23 @@ const logos: Logo[] = [
         name: "Rod Martin",
         image: rodMartinLogo,
         alt: "Rod Martin",
-        href: "/work/rod-martin",
-        ariaLabel: "View Rod Martin case study"
+        href: "https://www.rodmartinartist.com",
+        ariaLabel: "Visit Rod Martin's website"
     },
     {
         name: "Owen & Associates",
         image: owenAssociatesLogo,
         alt: "Owen & Associates",
-        href: "/work/owen-associates",
-        ariaLabel: "View Owen & Associates case study"
+        href: "https://owenandassoc.com",
+        ariaLabel: "Visit Owen & Associates website"
+    },
+    {
+        name: "Creators Value",
+        image: creatorsValueLogo,
+        imageDark: creatorsValueLogoDark,
+        alt: "Creators Value",
+        href: "https://www.creatorsvalue.com",
+        ariaLabel: "Visit Creators Value website"
     },
     {
         name: "PorbEduAksyon",
@@ -98,14 +109,27 @@ export default function LogoStrip() {
                                 <a
                                     href={logo.href}
                                     aria-label={logo.ariaLabel}
+                                    target={logo.href.startsWith('http') ? '_blank' : undefined}
+                                    rel={logo.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                                     className="block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 rounded-lg transition-all duration-300"
                                 >
                                     <img
                                         src={logo.image}
                                         alt={logo.alt}
-                                        className="h-14 w-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                        className={cn(
+                                            "h-14 w-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300",
+                                            logo.imageDark && "dark:hidden"
+                                        )}
                                         loading="eager"
                                     />
+                                    {logo.imageDark && (
+                                        <img
+                                            src={logo.imageDark}
+                                            alt={logo.alt}
+                                            className="hidden dark:block h-14 w-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                            loading="eager"
+                                        />
+                                    )}
                                 </a>
                             </li>
                         ))}

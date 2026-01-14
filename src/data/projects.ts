@@ -16,6 +16,7 @@ export interface Project {
     disclaimer?: boolean;
     slug?: string;
     year?: string;
+    url?: string;
 }
 
 export const projects: Project[] = [
@@ -33,24 +34,10 @@ export const projects: Project[] = [
         ],
         disclaimer: false,
         slug: "rod-martin",
-        year: "2025"
+        year: "2025",
+        url: "https://www.rodmartinartist.com"
     },
-    {
-        category: "In-house Product",
-        title: "Launch Kit",
-        description: "Rapid launch for SMBs: hero, proof strip, value bullets, and contact form—everything you need to validate your offer and start collecting leads.",
-        image: abstractImg,
-        type: "in-house",
-        sector: "Multi-Industry",
-        metrics: [
-            "Ships in 3-5 days",
-            "LCP <2.0s",
-            "2 A/B variants included"
-        ],
-        disclaimer: false,
-        slug: "launch-kit",
-        year: "2026"
-    },
+
     {
         category: "In-house Product",
         title: "PorbEduAksyon",
@@ -84,35 +71,37 @@ export const projects: Project[] = [
         year: "2025"
     },
     {
-        category: "Concept Redesign",
+        category: "Client Case Study",
         title: "Owen & Associates",
         description: "Banking reimagined: clearer pathways to account signup and product discovery, with trust markers that reduce friction and build confidence.",
         image: owenAssociatesImg,
-        type: "concept",
+        type: "client",
         sector: "Fintech",
         metrics: [
             "LCP ↓35% (2.9s → 1.9s)",
             "Task success 8/10",
             "Pricing clarity ↑22%"
         ],
-        disclaimer: true,
+        disclaimer: false,
         slug: "owen-associates",
-        year: "2025"
+        year: "2025",
+        url: "https://owenandassoc.com"
     },
     {
-        category: "Concept Redesign",
+        category: "Client Case Study",
         title: "Creators Value",
         description: "Empower creators with streamlined onboarding and intuitive content discovery—reducing friction from signup to first publish.",
         image: creatorsValueImg,
-        type: "concept",
+        type: "client",
         sector: "Content Platform",
         metrics: [
             "Onboarding 5→3 steps",
             "Search time ↓28%",
             "LCP ↓32%"
         ],
-        disclaimer: true,
+        disclaimer: false,
         slug: "creators-value",
-        year: "2025"
+        year: "2025",
+        url: "https://www.creatorsvalue.com"
     },
 ];
