@@ -5,7 +5,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import LogoStrip from "@/components/LogoStrip";
 
-type FilterType = "all" | "client" | "in-house" | "concept" | "experiment";
+type FilterType = "all" | "client" | "personal";
 
 export default function Work() {
   const [activeFilter, setActiveFilter] = useState<FilterType>("all");
@@ -19,12 +19,8 @@ export default function Work() {
     switch (type) {
       case "client":
         return "bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20";
-      case "in-house":
+      case "personal":
         return "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20";
-      case "concept":
-        return "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20";
-      case "experiment":
-        return "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20";
     }
   };
 
@@ -32,12 +28,8 @@ export default function Work() {
     switch (type) {
       case "client":
         return "Client";
-      case "in-house":
-        return "In-house";
-      case "concept":
-        return "Concept";
-      case "experiment":
-        return "Experiment";
+      case "personal":
+        return "Personal";
     }
   };
 
@@ -61,9 +53,7 @@ export default function Work() {
             {[
               { label: "All", value: "all" as FilterType },
               { label: "Client", value: "client" as FilterType },
-              { label: "In-house", value: "in-house" as FilterType },
-              { label: "Concept", value: "concept" as FilterType },
-              { label: "Experiments", value: "experiment" as FilterType },
+              { label: "Personal Projects", value: "personal" as FilterType },
             ].map((filter) => (
               <button
                 key={filter.value}
@@ -139,6 +129,11 @@ export default function Work() {
                         <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground border border-border px-3 py-1 rounded-full self-start sm:self-auto whitespace-nowrap">
                           {project.sector}
                         </span>
+                        {project.status === "ongoing" && (
+                          <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border self-start sm:self-auto whitespace-nowrap bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20">
+                            Ongoing
+                          </span>
+                        )}
                       </div>
                     </div>
 

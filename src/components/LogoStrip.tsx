@@ -5,6 +5,7 @@ import owenAssociatesLogo from "@/assets/logos/owen-associates-logo.png";
 import rodMartinLogo from "@/assets/logos/rod-martin-logo.png";
 import creatorsValueLogo from "@/assets/logos/creators-value-logo.png";
 import creatorsValueLogoDark from "@/assets/logos/creators-value-logo-dark.png";
+import southshoreLogo from "@/assets/logos/southshore-logo.png";
 
 interface Logo {
     name: string;
@@ -44,6 +45,13 @@ const logos: Logo[] = [
         alt: "PorbEduAksyon",
         href: "/work/porbeduaksyon",
         ariaLabel: "View PorbEduAksyon case study"
+    },
+    {
+        name: "Southshore Tours",
+        image: southshoreLogo,
+        alt: "Southshore Tours",
+        href: "https://www.southshoretours.ph",
+        ariaLabel: "Visit Southshore Tours website"
     },
 ];
 

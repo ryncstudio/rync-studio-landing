@@ -4,19 +4,21 @@ import owenAssociatesImg from "@/assets/images/owen-associates.png";
 import creatorsValueImg from "@/assets/images/creators-value.png";
 import porbEduAksyonImg from "@/assets/images/porbeduaksyon.png";
 import pawVitaImg from "@/assets/images/pawvita.png";
+import southshoreImg from "@/assets/images/southshore.png";
 
 export interface Project {
     category: string;
     title: string;
     description: string;
     image: string;
-    type: "client" | "in-house" | "concept" | "experiment";
+    type: "client" | "personal";
     sector: string;
     metrics?: string[];
     disclaimer?: boolean;
     slug?: string;
     year?: string;
     url?: string;
+    status?: "ongoing" | "completed";
 }
 
 export const projects: Project[] = [
@@ -39,11 +41,11 @@ export const projects: Project[] = [
     },
 
     {
-        category: "In-house Product",
+        category: "Personal Project",
         title: "PorbEduAksyon",
         description: "Accessible online learning platform empowering marginalized citizens with skills and opportunities—built with inclusivity and performance as core principles.",
         image: porbEduAksyonImg,
-        type: "in-house",
+        type: "personal",
         sector: "Education",
         metrics: [
             "Course access speed ↓30%",
@@ -55,11 +57,11 @@ export const projects: Project[] = [
         year: "2025"
     },
     {
-        category: "In-house Product",
+        category: "Personal Project",
         title: "PawVita",
         description: "Premium pet essentials and trusted veterinary care—delivered through a friction-free e-commerce experience that prioritizes product discovery and checkout speed.",
         image: pawVitaImg,
-        type: "in-house",
+        type: "personal",
         sector: "Pet Care",
         metrics: [
             "Checkout friction ↓ (4→2 steps)",
@@ -69,6 +71,24 @@ export const projects: Project[] = [
         disclaimer: false,
         slug: "pawvita",
         year: "2025"
+    },
+    {
+        category: "Client Case Study",
+        title: "Southshore Tours",
+        description: "Travel and tour booking platform showcasing Cebu's best destinations with seamless user experience and stunning visual storytelling.",
+        image: southshoreImg,
+        type: "client",
+        sector: "Travel & Tourism",
+        metrics: [
+            "Modern booking interface",
+            "Mobile-optimized design",
+            "Fast page loads"
+        ],
+        disclaimer: false,
+        slug: "southshore-tours",
+        year: "2026",
+        url: "https://www.southshoretours.ph",
+        status: "ongoing"
     },
     {
         category: "Client Case Study",
