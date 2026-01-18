@@ -134,6 +134,11 @@ export default function Work() {
                             Ongoing
                           </span>
                         )}
+                        {project.role === "designer" && (
+                          <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border self-start sm:self-auto whitespace-nowrap bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20">
+                            Designer
+                          </span>
+                        )}
                       </div>
                     </div>
 

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronRight, Play } from "lucide-react";
 import heroBg from "@/assets/images/hero-bg.jpg";
 import { FadeIn } from "@/components/FadeIn";
+import { projects } from "@/data/projects";
 
 export default function Hero() {
   const scrollToContact = () => {
@@ -49,18 +50,14 @@ export default function Hero() {
 
           <FadeIn delay={0.5}>
             <div className="pt-12 mt-12 border-t border-border/50 w-full">
-              <div className="grid grid-cols-3 divide-x divide-border/50 gap-2 md:gap-8 opacity-80 max-w-3xl mx-auto">
+              <div className="grid grid-cols-2 divide-x divide-border/50 gap-2 md:gap-8 opacity-80 max-w-2xl mx-auto">
                 <div className="text-center px-2">
                   <p className="text-2xl md:text-3xl font-display font-bold text-foreground">6+</p>
                   <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Years Combined Exp.</p>
                 </div>
                 <div className="text-center px-2">
-                  <p className="text-2xl md:text-3xl font-display font-bold text-foreground">5+</p>
+                  <p className="text-2xl md:text-3xl font-display font-bold text-foreground">{projects.length}+</p>
                   <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Successful Projects</p>
-                </div>
-                <div className="text-center px-2">
-                  <p className="text-2xl md:text-3xl font-display font-bold text-foreground">100%</p>
-                  <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider">Satisfaction</p>
                 </div>
               </div>
             </div>

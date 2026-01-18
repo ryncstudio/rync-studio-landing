@@ -6,6 +6,7 @@ import rodMartinLogo from "@/assets/logos/rod-martin-logo.png";
 import creatorsValueLogo from "@/assets/logos/creators-value-logo.png";
 import creatorsValueLogoDark from "@/assets/logos/creators-value-logo-dark.png";
 import southshoreLogo from "@/assets/logos/southshore-logo.png";
+import kathrynWilkingLogo from "@/assets/logos/kathryn-wilking-logo.png";
 
 interface Logo {
     name: string;
@@ -53,6 +54,13 @@ const logos: Logo[] = [
         href: "https://www.southshoretours.ph",
         ariaLabel: "Visit Southshore Tours website"
     },
+    {
+        name: "Kathryn Wilking",
+        image: kathrynWilkingLogo,
+        alt: "Kathryn Wilking Feng Shui Designs",
+        href: "https://www.kathrynwilking.com",
+        ariaLabel: "Visit Kathryn Wilking website"
+    },
 ];
 
 export default function LogoStrip() {
@@ -87,86 +95,147 @@ export default function LogoStrip() {
         <section
             ref={sectionRef}
             aria-label="Trusted by brands"
-            className="w-full py-16"
+            className="w-full py-16 overflow-hidden"
         >
             <div className="container mx-auto px-6">
                 {/* Glassmorphism Container */}
-                <div className="max-w-4xl mx-auto bg-white/70 dark:bg-slate-900/70 backdrop-blur-[16px] backdrop-saturate-[1.1] border border-white/25 dark:border-white/15 rounded-2xl p-10 shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+                <div className="max-w-6xl mx-auto bg-white/70 dark:bg-slate-900/70 backdrop-blur-[16px] backdrop-saturate-[1.1] border border-white/25 dark:border-white/15 rounded-2xl p-10 shadow-[0_8px_32px_rgba(0,0,0,0.12)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.3)] overflow-hidden">
 
                     {/* Caption */}
                     <p className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-10">
-                        Trusted by businesses in PH and abroad
+                        Trusted by leading brands across industries
                     </p>
 
-                    {/* Logo Grid - Centered 3 columns */}
-                    <ul
-                        role="list"
-                        className="flex items-center justify-center gap-12 md:gap-16 flex-wrap"
-                    >
-                        {logos.map((logo, index) => (
-                            <li
-                                key={logo.name}
-                                className={cn(
-                                    "opacity-0",
-                                    isVisible && "logo-item-reveal"
-                                )}
-                                style={{
-                                    animationDelay: isVisible ? `${index * 150}ms` : "0ms"
-                                }}
-                            >
-                                <a
-                                    href={logo.href}
-                                    aria-label={logo.ariaLabel}
-                                    target={logo.href.startsWith('http') ? '_blank' : undefined}
-                                    rel={logo.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                    className="block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 rounded-lg transition-all duration-300"
+                    {/* Infinite Scrolling Marquee */}
+                    <div className="relative w-full">
+                        <div className="flex animate-marquee">
+                            {/* First set of logos */}
+                            {logos.map((logo, index) => (
+                                <div
+                                    key={`first-${logo.name}-${index}`}
+                                    className="flex-shrink-0 mx-8"
                                 >
-                                    <img
-                                        src={logo.image}
-                                        alt={logo.alt}
-                                        className={cn(
-                                            "h-14 w-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300",
-                                            logo.imageDark && "dark:hidden"
-                                        )}
-                                        loading="eager"
-                                    />
-                                    {logo.imageDark && (
+                                    <a
+                                        href={logo.href}
+                                        aria-label={logo.ariaLabel}
+                                        target={logo.href.startsWith('http') ? '_blank' : undefined}
+                                        rel={logo.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                        className="block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 rounded-lg transition-all duration-300"
+                                    >
                                         <img
-                                            src={logo.imageDark}
+                                            src={logo.image}
                                             alt={logo.alt}
-                                            className="hidden dark:block h-14 w-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                            className={cn(
+                                                "h-14 w-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300",
+                                                logo.imageDark && "dark:hidden"
+                                            )}
                                             loading="eager"
                                         />
-                                    )}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
+                                        {logo.imageDark && (
+                                            <img
+                                                src={logo.imageDark}
+                                                alt={logo.alt}
+                                                className="hidden dark:block h-14 w-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                                loading="eager"
+                                            />
+                                        )}
+                                    </a>
+                                </div>
+                            ))}
+                            {/* Duplicate set for seamless loop */}
+                            {logos.map((logo, index) => (
+                                <div
+                                    key={`second-${logo.name}-${index}`}
+                                    className="flex-shrink-0 mx-8"
+                                >
+                                    <a
+                                        href={logo.href}
+                                        aria-label={logo.ariaLabel}
+                                        target={logo.href.startsWith('http') ? '_blank' : undefined}
+                                        rel={logo.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                        className="block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 rounded-lg transition-all duration-300"
+                                    >
+                                        <img
+                                            src={logo.image}
+                                            alt={logo.alt}
+                                            className={cn(
+                                                "h-14 w-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300",
+                                                logo.imageDark && "dark:hidden"
+                                            )}
+                                            loading="eager"
+                                        />
+                                        {logo.imageDark && (
+                                            <img
+                                                src={logo.imageDark}
+                                                alt={logo.alt}
+                                                className="hidden dark:block h-14 w-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                                loading="eager"
+                                            />
+                                        )}
+                                    </a>
+                                </div>
+                            ))}
+                            {/* Third set for extra smooth loop */}
+                            {logos.map((logo, index) => (
+                                <div
+                                    key={`third-${logo.name}-${index}`}
+                                    className="flex-shrink-0 mx-8"
+                                >
+                                    <a
+                                        href={logo.href}
+                                        aria-label={logo.ariaLabel}
+                                        target={logo.href.startsWith('http') ? '_blank' : undefined}
+                                        rel={logo.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                        className="block group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 rounded-lg transition-all duration-300"
+                                    >
+                                        <img
+                                            src={logo.image}
+                                            alt={logo.alt}
+                                            className={cn(
+                                                "h-14 w-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300",
+                                                logo.imageDark && "dark:hidden"
+                                            )}
+                                            loading="eager"
+                                        />
+                                        {logo.imageDark && (
+                                            <img
+                                                src={logo.imageDark}
+                                                alt={logo.alt}
+                                                className="hidden dark:block h-14 w-auto object-contain opacity-85 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+                                                loading="eager"
+                                            />
+                                        )}
+                                    </a>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <style>{`
-        @keyframes fadeInUp {
+        @keyframes marquee {
           from {
-            opacity: 0;
-            transform: translateY(12px);
+            transform: translateX(-66.66%);
           }
           to {
-            opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0%);
           }
         }
 
-        .logo-item-reveal {
-          animation: fadeInUp 0.6s ease-out forwards;
+        .animate-marquee {
+          animation: marquee 25s linear infinite;
+          will-change: transform;
+        }
+
+        .animate-marquee:hover {
+          animation-play-state: paused;
         }
 
         /* Disable animations for reduced motion */
         @media (prefers-reduced-motion: reduce) {
-          .logo-item-reveal {
+          .animate-marquee {
             animation: none !important;
-            opacity: 1 !important;
-            transform: none !important;
           }
         }
       `}</style>

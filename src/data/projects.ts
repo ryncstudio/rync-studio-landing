@@ -4,7 +4,8 @@ import owenAssociatesImg from "@/assets/images/owen-associates.png";
 import creatorsValueImg from "@/assets/images/creators-value.png";
 import porbEduAksyonImg from "@/assets/images/porbeduaksyon.png";
 import pawVitaImg from "@/assets/images/pawvita.png";
-import southshoreImg from "@/assets/images/southshore.png";
+import southshoreImg from "@/assets/images/southshore-coming-soon.svg";
+import kathrynWilkingImg from "@/assets/images/kathryn-wilking.png";
 
 export interface Project {
     category: string;
@@ -19,6 +20,7 @@ export interface Project {
     year?: string;
     url?: string;
     status?: "ongoing" | "completed";
+    role?: "designer" | "developer" | "full-service";
 }
 
 export const projects: Project[] = [
@@ -105,7 +107,26 @@ export const projects: Project[] = [
         disclaimer: false,
         slug: "owen-associates",
         year: "2025",
-        url: "https://owenandassoc.com"
+        url: "https://owenandassoc.com",
+        role: "designer"
+    },
+    {
+        category: "Client Case Study",
+        title: "Kathryn Wilking",
+        description: "Vibrant feng shui design consultancy brand identity and website showcasing holistic design philosophy with engaging visual storytelling.",
+        image: kathrynWilkingImg,
+        type: "client",
+        sector: "Design Consultancy",
+        metrics: [
+            "Brand identity refresh",
+            "Visual storytelling ↑",
+            "Engagement optimized"
+        ],
+        disclaimer: false,
+        slug: "kathryn-wilking",
+        year: "2025",
+        url: "https://www.kathrynwilking.com",
+        role: "designer"
     },
     {
         category: "Client Case Study",
@@ -122,6 +143,7 @@ export const projects: Project[] = [
         disclaimer: false,
         slug: "creators-value",
         year: "2025",
-        url: "https://www.creatorsvalue.com"
+        url: "https://www.creatorsvalue.com",
+        role: "designer"
     },
 ];
